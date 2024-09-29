@@ -2,6 +2,14 @@
 
 Scholarship Finder is a web application designed to help students discover, track, and manage scholarships tailored to their profiles. With a clean and intuitive interface, Scholarship Finder allows students to simplify the process of finding scholarships, organizing documents, and monitoring application progress.
 
+## 💡 Why Was I Created?
+
+Scholarship Finder was born out of a personal need. As a student, I faced the task of finding scholarships that matched my academic background, goals, and personal interests. The process was overwhelming, and I missed out on countless opportunities because of how scattered the scholarship landscape is. 
+
+I realized there had to be a better way to help students like myself not only find scholarships but also track their applications and manage the entire process with ease. Scholarship Finder was created with one goal in mind: **to simplify the journey of financing education**. I want every student to have access to the resources they need to pursue their academic dreams without being burdened by financial uncertainty.
+
+Whether you're looking for merit-based scholarships, need-based financial aid, or niche-specific opportunities, Scholarship Finder aims to provide personalized scholarship matches and a clear path forward.
+
 ## 🚀 Features
 
 - **🔍 Scholarship Search**: Discover scholarships that match your academic profile and background.
