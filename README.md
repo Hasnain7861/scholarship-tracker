@@ -1,6 +1,6 @@
 # 🎓 Scholarship Finder
 
-Scholarship Finder is a web application designed to help students discover, track, and manage scholarships tailored to their profiles. With a clean and intuitive interface, Scholarship Finder empowers students by simplifying the process of finding scholarships, organizing documents, and monitoring application progress.
+Scholarship Finder is a web application designed to help students discover, track, and manage scholarships tailored to their profiles. With a clean and intuitive interface, Scholarship Finder allows students to simplify the process of finding scholarships, organizing documents, and monitoring application progress.
 
 ## 🚀 Features
 
