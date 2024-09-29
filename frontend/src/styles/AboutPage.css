@@ -1,12 +1,10 @@
-/* src/styles/AboutPage.css */
-
 .about-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
     color: #333;
-    background: url('/public/assets/Academic_Clean_Background.jpg') center/cover no-repeat; /* Add a background image */
+    background: url('/public/assets/Academic_Clean_Background.jpg') center/cover no-repeat;
   }
   
   .header {
