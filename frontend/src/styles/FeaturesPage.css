@@ -1,0 +1,114 @@
+.features-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f6f8;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #003366;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .features-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #4b79a1, #283e51);
+    color: #fff;
+  }
+  
+  .features-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .features-hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #218838;
+  }
+  
+  .features-content {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .features-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    flex: 1 1 250px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-icon {
+    font-size: 40px;
+    color: #4b79a1;
+    margin-bottom: 10px;
+  }
+  
+  .cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #003366;
+    color: #fff;
+  }
+  
+  .footer {
+    padding: 20px;
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  

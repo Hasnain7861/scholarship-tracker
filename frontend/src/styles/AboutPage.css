@@ -1,0 +1,85 @@
+/* src/styles/AboutPage.css */
+
+.about-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: url('/public/assets/Academic_Clean_Background.jpg') center/cover no-repeat; /* Add a background image */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #003366;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .about-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(75, 121, 161, 0.85);
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-section, .mission-vision-section, .founder-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .founder-image {
+    max-width: 200px;
+    margin: 20px 0;
+  }
+  
+  .contact-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #3b5f8a;
+  }
+  
+  .footer {
+    margin-top: auto;
+    padding: 20px;
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  

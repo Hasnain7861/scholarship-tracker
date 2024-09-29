@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/HomePage.css'; 
 
 const HomePage = () => {
@@ -8,11 +9,11 @@ const HomePage = () => {
       <header className="header">
         <div className="logo">Scholarship Finder</div>
         <nav className="nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#features">Features</a>
-          <a href="#contact">Contact</a>
-          <a href="#login">Register/Login</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/features">Features</Link>
+          <Link to="#contact">Contact</Link>
+          <Link to="#login">Register/Login</Link>
         </nav>
       </header>
 
