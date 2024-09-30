@@ -1,15 +1,12 @@
+// backend/routes/userRoutes.js
 const express = require('express');
-const { registerUser, authUser } = require('../controllers/userController');
-const { protect } = require('../middleware/authMiddleware');
-
+const { createUser, loginUser } = require('../controllers/userController');
 const router = express.Router();
 
-// Public routes
-router.post('/register', registerUser);
-router.post('/login', authUser);
+// User Registration
+router.post('/register', createUser);
 
-// Protected routes can be added here
-// Example:
-// router.get('/profile', protect, getUserProfile);
+// User Login
+router.post('/login', loginUser);
 
 module.exports = router;
