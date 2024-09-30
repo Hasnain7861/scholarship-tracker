@@ -1,3 +1,4 @@
+// src/pages/HomePage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/HomePage.css'; 
@@ -12,8 +13,7 @@ const HomePage = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/features">Features</Link>
-          <Link to="#contact">Contact</Link>
-          <Link to="#login">Register/Login</Link>
+          <Link to="/login">Register/Login</Link> {/* Updated link */}
         </nav>
       </header>
 
@@ -23,7 +23,9 @@ const HomePage = () => {
           <h1>Find and Track Scholarships Effortlessly</h1>
           <p>Discover thousands of scholarships tailored to your profile and manage your applications in one place.</p>
           <div className="hero-buttons">
-            <button className="btn-primary">Get Started</button>
+            <Link to="/login">
+              <button className="btn-primary">Get Started</button>
+            </Link>
             <button className="btn-secondary">Learn More</button>
           </div>
         </div>
