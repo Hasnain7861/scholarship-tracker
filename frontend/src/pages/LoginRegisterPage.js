@@ -1,6 +1,7 @@
 // src/pages/LoginRegisterPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/LoginRegisterPage.css'; // Import the new CSS file
 
 const LoginRegisterPage = () => {
   const [email, setEmail] = useState('');
@@ -31,31 +32,40 @@ const LoginRegisterPage = () => {
 
   return (
     <div className="login-register-page">
-      <h1>{isRegister ? 'Register' : 'Login'}</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">{isRegister ? 'Register' : 'Login'}</button>
-      </form>
-      <button onClick={() => setIsRegister(!isRegister)}>
-        {isRegister ? 'Already have an account? Login' : 'New user? Register'}
-      </button>
+      <div className="login-register-container">
+        <h1 className="login-register-title">
+          {isRegister ? 'Register' : 'Login'}
+        </h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">{isRegister ? 'Register' : 'Login'}</button>
+        </form>
+        <button
+          className="toggle-button"
+          onClick={() => setIsRegister(!isRegister)}
+        >
+          {isRegister
+            ? 'Already have an account? Login'
+            : 'New user? Register'}
+        </button>
+      </div>
     </div>
   );
 };
