@@ -1,7 +1,6 @@
-// src/pages/LoginRegisterPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/LoginRegisterPage.css'; // Import the new CSS file
+import '../styles/LoginRegisterPage.css';
 
 const LoginRegisterPage = () => {
   const [email, setEmail] = useState('');
