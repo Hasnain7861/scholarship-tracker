@@ -1,4 +1,3 @@
-// src/pages/AboutPage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/AboutPage.css'; // Ensure this CSS file is updated according to the latest changes
