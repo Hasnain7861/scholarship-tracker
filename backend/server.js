@@ -1,5 +1,3 @@
-// backend/server.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -14,17 +12,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+// Connect to MongoDB using the connection string in the .env file
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
 .then(() => console.log('MongoDB Connected'))
-.catch((err) => console.log(err));
+.catch((err) => console.error('MongoDB connection error:', err));
 
-// Define Routes
+// Define routes
 app.get('/', (req, res) => {
-    res.send('Scholarship Tracker API');
+    res.send('API is running...');
 });
 
 // Start the server

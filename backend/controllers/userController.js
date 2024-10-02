@@ -1,18 +1,25 @@
-// backend/controllers/userController.js
+const User = require('../models/User');  
 
-const User = require('../models/User');
-
-// Register User
 const createUser = async (req, res) => {
   const { email, password } = req.body;
+  console.log('Request body:', req.body); // Add this to check if the data is received
+  
+  // Check if email or password are missing
+  if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
+  }
+
   try {
-    const newUser = new User({ email, password });
-    await newUser.save();
-    res.status(201).json({ message: 'User created successfully' });
+      const newUser = new User({ email, password });
+      await newUser.save();
+      res.status(201).json({ message: 'User created successfully' });
   } catch (err) {
-    res.status(400).json({ message: 'Error creating user', error: err.message });
+      console.error('Error creating user:', err); 
+      res.status(400).json({ error: 'Error creating user', details: err.message });
   }
 };
+
+
 
 // Login User
 const loginUser = async (req, res) => {
