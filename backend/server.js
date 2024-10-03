@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const cors = require('cors');
+const dotenv = require('dotenv');
+const userRoutes = require('./routes/userRoutes');  // Import your user routes
 
 // Load environment variables
 dotenv.config();
@@ -12,17 +13,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB using the connection string in the .env file
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000,
 })
 .then(() => console.log('MongoDB Connected'))
-.catch((err) => console.error('MongoDB connection error:', err));
+.catch((err) => console.log(err));
 
-// Define routes
+// Use the user routes for any requests starting with /api/users
+app.use('/api/users', userRoutes);  // Ensure this route is correct
+
+// Default route
 app.get('/', (req, res) => {
-    res.send('API is running...');
+    res.send('Scholarship Tracker API');
 });
 
 // Start the server
