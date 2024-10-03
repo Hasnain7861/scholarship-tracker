@@ -15,14 +15,14 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    width: 100%; /* Ensure the form takes up the full container width */
+    width: 100%;
   }
   
   .login-register-title {
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #1E3A8A; /* Matches your homepage theme */
+    color: #1E3A8A;
     text-align: center;
   }
   
@@ -47,8 +47,8 @@
   }
   
   form button {
-    width: 100%; /* Ensure button takes up full width */
-    background-color: #1E3A8A; /* Matches your homepage theme */
+    width: 100%; 
+    background-color: #1E3A8A;
     color: #fff;
     padding: 12px;
     border: none;
@@ -59,7 +59,7 @@
   }
   
   form button:hover {
-    background-color: #3B82F6; /* Lighter blue on hover */
+    background-color: #3B82F6;
   }
   
   .toggle-button {

@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import FeaturesPage from './pages/FeaturesPage';
 import LoginRegisterPage from './pages/LoginRegisterPage';
-import UserDashboard from './pages/userDashboard'; // Adjust the path if necessary
+import UserDashboard from './pages/userDashboard';
 
 function App() {
   return (
