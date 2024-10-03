@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/FeaturesPage.css'; // Ensure the CSS file is created and styled appropriately
+import '../styles/FeaturesPage.css';
 import { FaSearch, FaClipboardCheck, FaFileAlt, FaChartLine } from 'react-icons/fa';
 
 const FeaturesPage = () => {

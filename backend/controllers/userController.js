@@ -2,7 +2,7 @@ const User = require('../models/User');
 
 const createUser = async (req, res) => {
   const { email, password } = req.body;
-  console.log('Request body:', req.body); // Add this to check if the data is received
+  console.log('Request body:', req.body);
   
   // Check if email or password are missing
   if (!email || !password) {

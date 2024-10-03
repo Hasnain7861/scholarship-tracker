@@ -20,7 +20,7 @@ const LoginRegisterPage = () => {
       const data = await res.json();
       if (res.ok) {
         alert(data.message);
-        navigate('/userDashboard'); // Redirect to homepage after successful login/register
+        navigate('/userDashboard'); // Redirect to user dashboard
       } else {
         alert(data.error);
       }

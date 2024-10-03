@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const userRoutes = require('./routes/userRoutes');  // Import your user routes
+const userRoutes = require('./routes/userRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -23,14 +23,14 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((err) => console.log(err));
 
 // Use the user routes for any requests starting with /api/users
-app.use('/api/users', userRoutes);  // Ensure this route is correct
+app.use('/api/users', userRoutes);
 
 // Default route
 app.get('/', (req, res) => {
     res.send('Scholarship Tracker API');
 });
 
-// Start the server
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
