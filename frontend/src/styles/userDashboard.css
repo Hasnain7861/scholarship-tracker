@@ -1,44 +1,19 @@
+/* General Dashboard Styles */
+.dashboard-container {
+  padding: 20px;
+}
+
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #003366;
   padding: 20px;
-  background-color: #003366; /* Match the theme */
-  color: #fff;
+  color: white;
 }
 
-.user-icon-container {
-  position: relative;
-}
-
-.user-icon {
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  width: 150px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-menu button {
-  width: 100%;
-  padding: 10px;
-  background-color: transparent;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  color: #003366;
-}
-
-.dropdown-menu button:hover {
-  background-color: #f2f2f2;
+.dashboard-title {
+  margin: 0;
 }
 
 .dashboard-tabs {
@@ -60,4 +35,67 @@
   background-color: #003366;
   color: white;
   border-color: #003366;
+}
+
+/* Search Scholarships Section */
+.search-scholarships {
+  margin: 20px 0;
+}
+
+.search-bar {
+  width: 100%; /* Make search bar full width */
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Table Styles */
+.scholarship-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scholarship-table th,
+.scholarship-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.scholarship-table th {
+  background-color: #003366;
+  color: white;
+}
+
+.scholarship-table td {
+  background-color: #f9f9f9;
+}
+
+.scholarship-table td:first-child,
+.scholarship-table th:first-child {
+  width: 40%; /* Make the first column wider for Scholarship Name */
+}
+
+.scholarship-table td:last-child,
+.scholarship-table th:last-child {
+  text-align: center;
+  width: 15%;
+}
+
+/* Adjust column sizes for provider, deadline, and amount */
+.scholarship-table td:nth-child(2),
+.scholarship-table th:nth-child(2) {
+  width: 20%;
+}
+
+.scholarship-table td:nth-child(3),
+.scholarship-table th:nth-child(3) {
+  width: 15%;
+}
+
+.scholarship-table td:nth-child(4),
+.scholarship-table th:nth-child(4) {
+  width: 10%;
 }
