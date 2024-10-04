@@ -8,14 +8,11 @@ const UserDashboard = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Handle tab switching
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
-  // Handle logout
   const handleLogout = () => {
-    // Implement logout logic here
     navigate('/');
   };
 
