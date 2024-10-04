@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { FaUserCircle } from 'react-icons/fa'; // Import the user icon
 import { useNavigate } from 'react-router-dom';
-import '../styles/userDashboard.css'; // Add your styles here
+import { FaUserCircle } from 'react-icons/fa';
+import '../styles/userDashboard.css';
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState('search');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Toggle dropdown
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
   // Handle tab switching
@@ -13,31 +13,30 @@ const UserDashboard = () => {
     setActiveTab(tab);
   };
 
-  // Handle logout (redirect to home)
+  // Handle logout
   const handleLogout = () => {
-    // Add any necessary logout logic (like clearing session data, etc.)
+    // Implement logout logic here
     navigate('/');
-  };
-
-  // Toggle dropdown visibility
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
         <h1 className="dashboard-title">Welcome to Scholarship Finder</h1>
-        <div className="user-icon-container">
-          <FaUserCircle 
-            className="user-icon" 
-            size={40} // You can adjust the size here
-            onClick={toggleDropdown}
+        <div className="profile-icon-container">
+          <FaUserCircle
+            size={40}
+            className="profile-icon"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           />
           {isDropdownOpen && (
-            <div className="dropdown-menu">
-              <button onClick={() => navigate('/profile')}>Profile</button>
-              <button onClick={handleLogout}>Logout</button>
+            <div className="profile-dropdown">
+              <button className="dropdown-item" onClick={() => navigate('/profile')}>
+                Profile
+              </button>
+              <button className="dropdown-item logout-button" onClick={handleLogout}>
+                Logout
+              </button>
             </div>
           )}
         </div>
