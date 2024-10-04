@@ -23,7 +23,9 @@ const FeaturesPage = () => {
           Our platform empowers students to find, track, and manage scholarship opportunities
           effortlessly, turning your academic dreams into reality.
         </p>
-        <button className="cta-button">Start Your Journey Today</button>
+        <Link to="/login">
+            <button className="btn-primary">Start Your journey</button>
+        </Link>
       </section>
 
       <section className="features-content">
@@ -55,7 +57,9 @@ const FeaturesPage = () => {
       <section className="cta-section">
         <h2>Ready to Find Your Perfect Scholarship?</h2>
         <p>Join thousands of students who have successfully found scholarships using our platform.</p>
-        <button className="cta-button">Register Now</button>
+        <Link to="/login">
+            <button className="btn-primary">Register Now</button>
+        </Link>
       </section>
 
       <footer className="footer">
