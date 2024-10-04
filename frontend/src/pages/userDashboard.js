@@ -1,19 +1,46 @@
-// src/pages/UserDashboard.js
 import React, { useState } from 'react';
-import '../styles/userDashboard.css'; // Make sure to create and add styles in a CSS file
+import { FaUserCircle } from 'react-icons/fa'; // Import the user icon
+import { useNavigate } from 'react-router-dom';
+import '../styles/userDashboard.css'; // Add your styles here
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState('search');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Toggle dropdown
+  const navigate = useNavigate();
 
   // Handle tab switching
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
+  // Handle logout (redirect to home)
+  const handleLogout = () => {
+    // Add any necessary logout logic (like clearing session data, etc.)
+    navigate('/');
+  };
+
+  // Toggle dropdown visibility
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
         <h1 className="dashboard-title">Welcome to Scholarship Finder</h1>
+        <div className="user-icon-container">
+          <FaUserCircle 
+            className="user-icon" 
+            size={40} // You can adjust the size here
+            onClick={toggleDropdown}
+          />
+          {isDropdownOpen && (
+            <div className="dropdown-menu">
+              <button onClick={() => navigate('/profile')}>Profile</button>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          )}
+        </div>
       </header>
 
       <div className="dashboard-tabs">
