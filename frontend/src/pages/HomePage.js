@@ -90,8 +90,6 @@ const HomePage = () => {
         <div className="footer-links">
           <a href="#about">About Us</a>
           <a href="#contact">Contact</a>
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Service</a>
         </div>
         <div className="social-media-icons">
           {/* Add social media icons here */}
