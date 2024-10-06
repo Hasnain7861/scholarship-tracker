@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/HomePage.css'; 
+import '../styles/HomePage.css';
 
 const HomePage = () => {
   return (
@@ -45,10 +45,34 @@ const HomePage = () => {
       <section className="how-it-works">
         <h2>How It Works</h2>
         <div className="steps">
-          <div className="step">Step 1: Sign Up</div>
-          <div className="step">Step 2: Search Scholarships</div>
-          <div className="step">Step 3: Apply & Track</div>
-          <div className="step">Step 4: Get Notifications</div>
+          <div className="step">
+            <div className="step-icon">1</div>
+            <div className="step-content">
+              <h3>Sign Up</h3>
+              <p>Create your account to get started.</p>
+            </div>
+          </div>
+          <div className="step">
+            <div className="step-icon">2</div>
+            <div className="step-content">
+              <h3>Search Scholarships</h3>
+              <p>Find scholarships that match your profile.</p>
+            </div>
+          </div>
+          <div className="step">
+            <div className="step-icon">3</div>
+            <div className="step-content">
+              <h3>Apply & Track</h3>
+              <p>Submit applications and monitor their status.</p>
+            </div>
+          </div>
+          <div className="step">
+            <div className="step-icon">4</div>
+            <div className="step-content">
+              <h3>Get Notifications</h3>
+              <p>Receive updates on your applications.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -78,3 +102,6 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+/* CSS file */
+
