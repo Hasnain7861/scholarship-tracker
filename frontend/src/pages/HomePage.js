@@ -88,7 +88,7 @@ const HomePage = () => {
       {/* Footer Section */}
       <footer className="footer">
         <div className="footer-links">
-          <a href="#about">About Us</a>
+        <Link to="/about">About us</Link>
           <a href="#contact">Contact</a>
         </div>
         <div className="social-media-icons">
