@@ -12,7 +12,6 @@ const FeaturesPage = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/features">Features</Link>
-          <Link to="#contact">Contact</Link>
           <Link to="#login">Register/Login</Link>
         </nav>
       </header>
@@ -66,8 +65,6 @@ const FeaturesPage = () => {
         <div className="footer-links">
           <Link to="/about">About Us</Link>
           <Link to="#contact">Contact</Link>
-          <Link to="#privacy">Privacy Policy</Link>
-          <Link to="#terms">Terms of Service</Link>
         </div>
       </footer>
     </div>
