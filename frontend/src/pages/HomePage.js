@@ -12,7 +12,7 @@ const HomePage = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/features">Features</Link>
-          <Link to="/login">Register/Login</Link> {/* Updated link */}
+          <Link to="/login">Register/Login</Link>
         </nav>
       </header>
 
