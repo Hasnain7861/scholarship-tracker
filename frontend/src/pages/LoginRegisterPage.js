@@ -5,7 +5,7 @@ import '../styles/LoginRegisterPage.css';
 const LoginRegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isRegister, setIsRegister] = useState(true); // Toggle between login and register
+  const [isRegister, setIsRegister] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
