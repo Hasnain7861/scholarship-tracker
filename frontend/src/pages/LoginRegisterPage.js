@@ -20,7 +20,7 @@ const LoginRegisterPage = () => {
       const data = await res.json();
       if (res.ok) {
         alert(data.message);
-        navigate('/userDashboard');
+        navigate('/userDetails');
       } else {
         alert(data.error);
       }

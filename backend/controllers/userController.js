@@ -1,25 +1,39 @@
 const User = require('../models/User');  
 
+// Create User
 const createUser = async (req, res) => {
   const { email, password } = req.body;
-  console.log('Request body:', req.body);
   
-  // Check if email or password are missing
   if (!email || !password) {
-      return res.status(400).json({ error: 'Email and password are required' });
+    return res.status(400).json({ error: 'Email and password are required' });
   }
 
   try {
-      const newUser = new User({ email, password });
-      await newUser.save();
-      res.status(201).json({ message: 'User created successfully' });
+    const newUser = new User({ email, password });
+    await newUser.save();
+    res.status(201).json({ message: 'User created successfully', userId: newUser._id });
   } catch (err) {
-      console.error('Error creating user:', err); 
-      res.status(400).json({ error: 'Error creating user', details: err.message });
+    res.status(400).json({ error: 'Error creating user', details: err.message });
   }
 };
 
+// Update User Profile
+const updateUserProfile = async (req, res) => {
+  const { firstName, lastName, city, state, country, gpa, major, graduationYear } = req.body;
+  const userId = req.params.userId;
 
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      userId, 
+      { firstName, lastName, city, state, country, gpa, major, graduationYear },
+      { new: true }
+    );
+    
+    res.status(200).json({ message: 'Profile updated successfully', updatedUser });
+  } catch (err) {
+    res.status(500).json({ error: 'Error updating profile' });
+  }
+};
 
 // Login User
 const loginUser = async (req, res) => {
@@ -36,4 +50,4 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { createUser, loginUser };
+module.exports = { createUser, loginUser, updateUserProfile };

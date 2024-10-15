@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import FeaturesPage from './pages/FeaturesPage';
 import LoginRegisterPage from './pages/LoginRegisterPage';
 import UserDashboard from './pages/userDashboard';
+import UserDetailsForm from './pages/UserDetailsForm'; 
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/login" element={<LoginRegisterPage />} />
           <Route path="/userDashboard" element={<UserDashboard />} />
+          <Route path="/userDetails" element={<UserDetailsForm />} />
         </Routes>
       </div>
     </Router>
