@@ -5,22 +5,33 @@ import '../styles/LoginRegisterPage.css';
 const LoginRegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isRegister, setIsRegister] = useState(true);
+  const [isRegister, setIsRegister] = useState(true); // Toggle between login and register
   const navigate = useNavigate();
 
+  // Handle form submission for login or register
   const handleSubmit = async (e) => {
     e.preventDefault();
     const endpoint = isRegister ? 'register' : 'login';
+
     try {
       const res = await fetch(`http://localhost:5000/api/users/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
+
       const data = await res.json();
+      
       if (res.ok) {
         alert(data.message);
-        navigate('/userDetails');
+
+        // Redirect based on the action (register or login)
+        if (isRegister) {
+          // Store user ID or email if necessary
+          navigate('/userDetails'); // Route to UserDetails form after registration
+        } else {
+          navigate('/userDashboard'); // Route to UserDashboard after login
+        }
       } else {
         alert(data.error);
       }
@@ -54,7 +65,9 @@ const LoginRegisterPage = () => {
               required
             />
           </div>
-          <button type="submit">{isRegister ? 'Register' : 'Login'}</button>
+          <button type="submit">
+            {isRegister ? 'Register' : 'Login'}
+          </button>
         </form>
         <button
           className="toggle-button"
