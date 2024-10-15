@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import USStates from 'react-select-us-states';
 import { useNavigate } from 'react-router-dom';
-import '../styles/UserDetailsForm.css'; // Make sure this path is correct
+import '../styles/UserDetailsForm.css'; // Ensure path is correct
 
 const UserDetailsForm = () => {
   const [formData, setFormData] = useState({
@@ -78,10 +78,8 @@ const UserDetailsForm = () => {
           required 
         />
 
-        <label>Select State:</label>
         <USStates onChange={handleStateChange} className="state-dropdown" />
 
-        <label>Country:</label>
         <select 
           name="country" 
           value={formData.country} 
