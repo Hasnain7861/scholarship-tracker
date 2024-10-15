@@ -23,17 +23,28 @@ const updateUserProfile = async (req, res) => {
   const userId = req.params.userId;
 
   try {
+    // Validate if userId and required fields are present
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID is required' });
+    }
+
     const updatedUser = await User.findByIdAndUpdate(
-      userId, 
+      userId,
       { firstName, lastName, city, state, country, gpa, major, graduationYear },
-      { new: true }
+      { new: true, runValidators: true }  // runValidators ensures Mongoose runs schema validation
     );
-    
+
+    if (!updatedUser) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
     res.status(200).json({ message: 'Profile updated successfully', updatedUser });
   } catch (err) {
+    console.error('Error updating profile:', err);
     res.status(500).json({ error: 'Error updating profile' });
   }
 };
+
 
 // Login User
 const loginUser = async (req, res) => {
