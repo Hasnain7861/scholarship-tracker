@@ -1,48 +1,80 @@
+/* userDetailsForm.css */
 .form-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    color: #003366;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .submit-button {
-    width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+select {
+  width: 100%;
+}
+
+button {
+  background-color: #003366;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #002244;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #999;
+}
+
+input:focus,
+select:focus {
+  border-color: #003366;
+  outline: none;
+}
+
+.state-dropdown {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  .form-container {
     padding: 15px;
-    background-color: #003366;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
   }
-  
-  .submit-button:hover {
-    background-color: #002244;
+
+  button {
+    font-size: 0.9rem;
   }
-  
+
+  input,
+  select {
+    font-size: 0.9rem;
+  }
+}
