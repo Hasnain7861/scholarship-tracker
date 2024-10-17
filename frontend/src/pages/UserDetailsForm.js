@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import USStates from 'react-select-us-states';
 import { useNavigate } from 'react-router-dom';
-import '../styles/UserDetailsForm.css'; // Ensure path is correct
+import '../styles/UserDetailsForm.css';
 
 const UserDetailsForm = () => {
   const [formData, setFormData] = useState({

@@ -31,7 +31,7 @@ const updateUserProfile = async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(
       userId,
       { firstName, lastName, city, state, country, gpa, major, graduationYear },
-      { new: true, runValidators: true }  // runValidators ensures Mongoose runs schema validation
+      { new: true, runValidators: true }
     );
 
     if (!updatedUser) {
