@@ -15,7 +15,9 @@ const UserDetailsForm = () => {
     graduationYear: ''
   });
 
-  const userId = localStorage.getItem('userId'); // Assuming userId is stored after registration
+  const userId = localStorage.getItem('userId');
+  console.log(localStorage.getItem('userId'));
+
   const navigate = useNavigate();
 
   const handleStateChange = (newState) => {

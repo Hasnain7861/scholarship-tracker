@@ -12,25 +12,22 @@ const LoginRegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const endpoint = isRegister ? 'register' : 'login';
-
     try {
       const res = await fetch(`http://localhost:5000/api/users/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
-
+  
       const data = await res.json();
-      
       if (res.ok) {
-        alert(data.message);
-
-        // Redirect based on the action (register or login)
+        console.log('User ID:', data.userId); // Log userId to verify
+        localStorage.setItem('userId', data.userId); // Store userId in localStorage
+  
         if (isRegister) {
-          // Store user ID or email if necessary
-          navigate('/userDetails'); // Route to UserDetails form after registration
+          navigate('/userDetails');
         } else {
-          navigate('/userDashboard'); // Route to UserDashboard after login
+          navigate('/userDashboard');
         }
       } else {
         alert(data.error);
@@ -39,6 +36,7 @@ const LoginRegisterPage = () => {
       alert('An error occurred. Please try again.');
     }
   };
+  
 
   return (
     <div className="login-register-page">

@@ -23,7 +23,6 @@ const updateUserProfile = async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    // Validate if userId and required fields are present
     if (!userId) {
       return res.status(400).json({ error: 'User ID is required' });
     }
