@@ -12,7 +12,7 @@ const UserDetailsForm = () => {
     country: 'United States',
     gpa: '',
     major: '',
-    graduationYear: ''
+    graduationYear: '',
   });
 
   const userId = localStorage.getItem('userId');
@@ -50,72 +50,91 @@ const UserDetailsForm = () => {
     }
   };
 
+  const generateGPAOptions = () => {
+    const options = [];
+    for (let gpa = 0.0; gpa < 4.1; gpa += 0.1) {
+      options.push(gpa.toFixed(1)); // Fixed to one decimal place
+    }
+    return options;
+  };
+
+  const generateYearOptions = () => {
+    const currentYear = 2024;
+    const years = [];
+    for (let year = currentYear; year <= 2030; year++) {
+      years.push(year);
+    }
+    return years;
+  };
+
   return (
     <div className="form-container">
       <h2>Complete Your Profile</h2>
       <form onSubmit={handleSubmit}>
-        <input 
-          type="text" 
-          name="firstName" 
-          placeholder="First Name" 
-          value={formData.firstName} 
-          onChange={handleChange} 
-          required 
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          value={formData.firstName}
+          onChange={handleChange}
+          required
         />
-        <input 
-          type="text" 
-          name="lastName" 
-          placeholder="Last Name" 
-          value={formData.lastName} 
-          onChange={handleChange} 
-          required 
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          value={formData.lastName}
+          onChange={handleChange}
+          required
         />
 
-        <input 
-          type="text" 
-          name="city" 
-          placeholder="City" 
-          value={formData.city} 
-          onChange={handleChange} 
-          required 
+        <input
+          type="text"
+          name="city"
+          placeholder="City"
+          value={formData.city}
+          onChange={handleChange}
+          required
         />
 
         <USStates onChange={handleStateChange} className="state-dropdown" />
 
-        <select 
-          name="country" 
-          value={formData.country} 
-          onChange={handleChange} 
-          required
-        >
+        <select name="country" value={formData.country} onChange={handleChange} required>
           <option value="United States">United States</option>
         </select>
 
-        <input 
-          type="number" 
-          name="gpa" 
-          placeholder="GPA" 
-          value={formData.gpa} 
-          onChange={handleChange} 
-          required 
+        <select name="gpa" value={formData.gpa} onChange={handleChange} required>
+          <option value="" disabled>Select GPA</option>
+          {generateGPAOptions().map((gpa) => (
+            <option key={gpa} value={gpa}>
+              {gpa}
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="text"
+          name="major"
+          placeholder="Major"
+          value={formData.major}
+          onChange={handleChange}
+          required
         />
-        <input 
-          type="text" 
-          name="major" 
-          placeholder="Major" 
-          value={formData.major} 
-          onChange={handleChange} 
-          required 
-        />
-        <input 
-          type="number" 
-          name="graduationYear" 
-          placeholder="Graduation Year" 
-          value={formData.graduationYear} 
-          onChange={handleChange} 
-          required 
-        />
-        
+
+        <select
+          name="graduationYear"
+          value={formData.graduationYear}
+          onChange={handleChange}
+          required
+        >
+          <option value="" disabled>Select Graduation Year</option>
+          {generateYearOptions().map((year) => (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          ))}
+        </select>
+
         <button type="submit">Submit</button>
       </form>
     </div>
