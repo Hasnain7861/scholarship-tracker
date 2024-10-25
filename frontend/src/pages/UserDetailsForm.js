@@ -41,7 +41,7 @@ const UserDetailsForm = () => {
       const data = await res.json();
       if (res.ok) {
         alert('Profile updated successfully!');
-        navigate('/userDashboard'); // Redirect to user dashboard after successful submission
+        navigate('/userDashboard');
       } else {
         alert(data.error);
       }
@@ -52,8 +52,8 @@ const UserDetailsForm = () => {
 
   const generateGPAOptions = () => {
     const options = [];
-    for (let gpa = 0.0; gpa < 4.1; gpa += 0.1) {
-      options.push(gpa.toFixed(1)); // Fixed to one decimal place
+    for (let gpa = 0.0; gpa <= 4.0; gpa += 0.1) {
+      options.push(gpa.toFixed(1));
     }
     return options;
   };
