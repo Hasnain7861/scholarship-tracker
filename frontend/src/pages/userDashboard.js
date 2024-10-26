@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
-import axios from 'axios'; // Import axios for API calls
+import axios from 'axios';
 import '../styles/userDashboard.css';
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState('search');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [scholarships, setScholarships] = useState([]); // State to store scholarships
+  const [scholarships, setScholarships] = useState([]); 
   const navigate = useNavigate();
 
-  // Fetch scholarships when the component mounts
   useEffect(() => {
     fetchScholarships();
   }, []);
@@ -19,7 +18,7 @@ const UserDashboard = () => {
     try {
       const response = await axios.get('http://127.0.0.1:8000/api/scholarship/');
       console.log(response.data);
-      setScholarships(response.data); // Store fetched scholarships
+      setScholarships(response.data); 
     } catch (error) {
       console.error('Error fetching scholarships:', error);
     }
