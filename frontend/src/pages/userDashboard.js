@@ -1,20 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
+import axios from 'axios'; // Import axios for API calls
 import '../styles/userDashboard.css';
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState('search');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [scholarships, setScholarships] = useState([]); // State to store scholarships
   const navigate = useNavigate();
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
+  // Fetch scholarships when the component mounts
+  useEffect(() => {
+    fetchScholarships();
+  }, []);
+
+  const fetchScholarships = async () => {
+    try {
+      const response = await axios.get('http://127.0.0.1:8000/api/scholarship/');
+      console.log(response.data);
+      setScholarships(response.data); // Store fetched scholarships
+    } catch (error) {
+      console.error('Error fetching scholarships:', error);
+    }
   };
 
-  const handleLogout = () => {
-    navigate('/');
-  };
+  const handleTabChange = (tab) => setActiveTab(tab);
+
+  const handleLogout = () => navigate('/');
 
   return (
     <div className="dashboard-container">
@@ -40,30 +53,15 @@ const UserDashboard = () => {
       </header>
 
       <div className="dashboard-tabs">
-        <button 
-          className={activeTab === 'search' ? 'tab active' : 'tab'} 
-          onClick={() => handleTabChange('search')}
-        >
-          Search Scholarships
-        </button>
-        <button 
-          className={activeTab === 'applied' ? 'tab active' : 'tab'} 
-          onClick={() => handleTabChange('applied')}
-        >
-          Scholarships Applied
-        </button>
-        <button 
-          className={activeTab === 'saved' ? 'tab active' : 'tab'} 
-          onClick={() => handleTabChange('saved')}
-        >
-          Saved Scholarships
-        </button>
-        <button 
-          className={activeTab === 'documents' ? 'tab active' : 'tab'} 
-          onClick={() => handleTabChange('documents')}
-        >
-          Your Documents
-        </button>
+        {['search', 'applied', 'saved', 'documents'].map((tab) => (
+          <button
+            key={tab}
+            className={activeTab === tab ? 'tab active' : 'tab'}
+            onClick={() => handleTabChange(tab)}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)} Scholarships
+          </button>
+        ))}
       </div>
 
       <div className="dashboard-content">
@@ -85,9 +83,23 @@ const UserDashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td colSpan="5">No scholarships found. Start searching!</td>
-                </tr>
+                {scholarships.length > 0 ? (
+                  scholarships.map((scholarship) => (
+                    <tr key={scholarship.id}>
+                      <td>{scholarship.scholarship_name}</td>
+                      <td>{scholarship.provider}</td>
+                      <td>{scholarship.deadline}</td>
+                      <td>${scholarship.amount}</td>
+                      <td>
+                        <button>Apply</button>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5">No scholarships found. Start searching!</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
