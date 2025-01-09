@@ -21,7 +21,7 @@ const LoginRegisterPage = () => {
   
       const data = await res.json();
       if (res.ok) {
-        console.log('User ID:', data.userId); // Log userId to verify
+        console.log('User ID:', data.userId);
         localStorage.setItem('userId', data.userId); // Store userId in localStorage
   
         if (isRegister) {
