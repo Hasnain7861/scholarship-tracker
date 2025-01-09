@@ -8,7 +8,6 @@ const LoginRegisterPage = () => {
   const [isRegister, setIsRegister] = useState(true); // Toggle between login and register
   const navigate = useNavigate();
 
-  // Handle form submission for login or register
   const handleSubmit = async (e) => {
     e.preventDefault();
     const endpoint = isRegister ? 'register' : 'login';
