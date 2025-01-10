@@ -39,7 +39,7 @@ const AboutPage = () => {
         </button>
       </section>
 
-      {/* Our Story Section */}
+      {/* Story Section */}
       <section className="story-section">
         <h2>Our Story</h2>
         <p>
